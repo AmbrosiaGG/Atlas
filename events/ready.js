@@ -14,10 +14,6 @@ module.exports = class {
 		client.logger.log(`Loading a total of ${client.commands.size} command(s).`, "log");
 		client.logger.log(`${client.user.tag}, ready to serve ${client.users.cache.size} users in ${client.guilds.cache.size} servers.`, "ready");
 
-		/* DiscordBots.org STATS */
-		const discordbotsorg = require("../helpers/discordbots.org.js");
-		discordbotsorg.init(client);
-
 		/* UNMUTE USERS */
 		const checkUnmutes = require("../helpers/checkUnmutes.js");
 		checkUnmutes.init(client);
@@ -25,10 +21,6 @@ module.exports = class {
 		/* SEND REMINDS */
 		const checkReminds = require("../helpers/checkReminds.js");
 		checkReminds.init(client);
-
-		/* DAILY SHOP FORTNITE */
-		const fortniteShop = require("../helpers/fortniteShop.js");
-		fortniteShop.init(client);
 
 		// Start the dashboard
 		if(client.config.dashboard.enabled){
@@ -49,7 +41,7 @@ module.exports = class {
 		}, 20000); // Every 20 seconds
 
 		setTimeout(() => {
-			console.log(chalk.magenta("\n\nLike this bot?"), "Support us by adding a star on GitHub ❤️   https://github.com/Androz2091/AtlantaBot");
+			console.log(chalk.magenta("\n\nLike this bot?"), "Support us by adding a star on GitHub ❤️   https://github.com/ambrosiagg/Atlas");
 		}, 400);
 
 	}

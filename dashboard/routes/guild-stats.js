@@ -12,7 +12,7 @@ router.get("/:serverID", CheckAuth, async(req, res) => {
 			user: req.userInfos,
 			language: req.language,
 			currentURL: `${req.client.config.dashboard.baseURL}/${req.originalUrl}`
-		});
+		});``
 	}
 
 	// Fetch guild informations

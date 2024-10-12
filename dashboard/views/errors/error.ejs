@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../includes/head.ejs')%>
+  <body
+    class="bg-neutral-900 h-screen w-screen flex items-center justify-center flex items-center justify-center"
+  >
+    <div
+      class="bg-neutral-800 border border-neutral-700/65 shadow-lg rounded-lg p-8 max-w-2xl w-full"
+    >
+      <h1 class="text-2xl font-bold text-red-500 font-calsans">
+        <%=status%> - Error Code
+      </h1>
+      <p class="mt-2 text-gray-400">A error occurred during rendering.</p>
+      <div class="mt-4">
+        <p class="text-sm text-gray-400">
+          This is likely caused by an issue with your server-side code.
+        </p>
+        <div class="relative max-w-2xl mx-auto mt-2">
+          <div class="bg-neutral-700 text-white p-4 rounded-md">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-gray-200">Code:</span>
+              <button
+                class="code bg-neutral-800/45 hover:bg-neutral-800/65 transition-all text-gray-300 px-3 py-1 rounded-md"
+                data-clipboard-target="#code"
+              >
+                Copy
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <pre id="code" class="text-gray-300">
+                <div>
+                    <%=message%>
+     </div>
+        
+        </pre>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+        <script>
+          new ClipboardJS(".code");
+        </script>
+      </div>
+      <div class="mt-6">
+        <p class="text-sm text-gray-500">
+          Check your server logs or the terminal output for more details.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

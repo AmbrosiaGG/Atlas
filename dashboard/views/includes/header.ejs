@@ -1,39 +1,133 @@
-<header class="main-header">
-
-    <!-- Logo -->
-    <a href="/" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b></span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Atlanta</b></span>
-    </a>
-
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-        <!-- Sidebar toggle button-->
-        <a class="sidebar-toggle" data-toggle="push-menu" role="button">
-            <span class="sr-only">Toggle navigation</span>
+<div class="relative z-10 -mb-2 hidden h-fit w-full justify-center lg:flex">
+  <div
+    class="container top-[27px] flex w-full flex-row items-center rounded-md border-opacity-[.25] font-normal"
+    style="
+      position: absolute;
+      padding: 0px 2.5rem;
+      backdrop-filter: blur(0px);
+      justify-content: end;
+    "
+  >
+    <div class="flex items-center">
+      <div
+        class="hover:-translate-y-1 focus:translate-y-0 active:translate-y-0 group relative flex justify-center transition ease-in-out"
+      >
+        <a
+          class="text-neutral-200 opacity-50 group-hover:opacity-75 relative font-inter text-tiny transition ease-in-out flex flex-row items-center justify-center gap-2 p-[12px]"
+          href="/home"
+          >Atlas</a
+        >
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div
+        class="hover:-translate-y-1 focus:translate-y-0 active:translate-y-0 group relative flex justify-center transition ease-in-out"
+      >
+        <a
+          class="text-neutral-200 opacity-50 group-hover:opacity-75 relative font-inter text-tiny transition ease-in-out flex flex-row items-center justify-center gap-2 p-[12px]"
+          href="/blog"
+          >Blog</a
+        >
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div
+        class="hover:-translate-y-1 focus:translate-y-0 active:translate-y-0 group relative flex justify-center transition ease-in-out"
+      >
+        <a
+          class="text-neutral-200 opacity-50 group-hover:opacity-75 relative font-inter text-tiny transition ease-in-out flex flex-row items-center justify-center gap-2 p-[12px]"
+          href="https://get.xp-bot.net/"
+          >Invite</a
+        >
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div
+        class="hover:-translate-y-1 focus:translate-y-0 active:translate-y-0 group relative flex justify-center transition ease-in-out"
+      >
+        <a
+          class="text-neutral-200 opacity-50 group-hover:opacity-75 relative font-inter text-tiny transition ease-in-out flex flex-row items-center justify-center gap-2 p-[12px]"
+          href="/status"
+          >Status</a
+        >
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div
+        class="hover:-translate-y-1 focus:translate-y-0 active:translate-y-0 group relative flex justify-center transition ease-in-out"
+      >
+        <a
+          class="text-neutral-200 opacity-50 group-hover:opacity-75 relative font-inter text-tiny transition ease-in-out flex flex-row items-center justify-center gap-2 p-[12px]"
+          href="https://discord.xp-bot.net/"
+          >Support<svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="people-pulling"
+            class="svg-inline--fa fa-people-pulling opacity-75"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 576 512"
+          >
+            <path
+              fill="currentColor"
+              d="M80 96A48 48 0 1 0 80 0a48 48 0 1 0 0 96zM64 128c-35.3 0-64 28.7-64 64V320c0 17.7 14.3 32 32 32c9.8 0 18.5-4.4 24.4-11.2L80.4 485.3c2.9 17.4 19.4 29.2 36.8 26.3s29.2-19.4 26.3-36.8L123.1 352h15.7l30 134.9c3.8 17.3 20.9 28.1 38.2 24.3s28.1-20.9 24.3-38.2l-57.3-258 116.3 53.8c.5 .3 1.1 .5 1.6 .7c8.6 3.6 18 3.1 25.9-.7c3.4-1.6 6.6-3.9 9.3-6.7c3.1-3.2 5.5-7 7.1-11.4c.1-.3 .2-.7 .3-1l2.5-7.5c5.7-17.1 18.3-30.9 34.7-38.2l8-3.5c1-.4 1.9-.8 2.9-1.2l-16.9 63.5c-5.6 21.1-.1 43.6 14.7 59.7l70.7 77.1 22 88.1c4.3 17.1 21.7 27.6 38.8 23.3s27.6-21.7 23.3-38.8l-23-92.1c-1.9-7.8-5.8-14.9-11.2-20.8l-49.5-54 19.3-65.5 9.6 23c4.4 10.6 12.5 19.3 22.8 24.5l26.7 13.3c15.8 7.9 35 1.5 42.9-14.3s1.5-35-14.3-42.9L537 232.7l-15.3-36.8C504.5 154.8 464.3 128 419.7 128c-22.8 0-45.3 4.8-66.1 14l-8 3.5c-24.4 10.9-44.6 29-58.1 51.6L157.3 136.9C144.7 131 130.9 128 117 128H64zM464 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM349.7 335.6l-25 62.4-59.4 59.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L372.3 441c4.6-4.6 8.2-10.1 10.6-16.1l14.5-36.2-40.7-44.4c-2.5-2.7-4.8-5.6-7-8.6z"
+            ></path>
+          </svg>
         </a>
-        <!-- Navbar Right Menu -->
-        <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-                <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<%= user.displayAvatarURL %>" class="user-image" alt="User Image">
-                        <span class="hidden-xs"><%= user.tag %></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!-- Menu Footer-->
-                        <li class="user-footer" style="min-width: auto !important;">
-                          <div>
-                            <a href="/logout" class="btn btn-default btn-flat btn-block">Sign out</a>
-                          </div>
-                        </li>
-                      </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-</header>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div class="h-6 w-[1px] bg-white opacity-25"></div>
+      <div class="group relative flex justify-center transition ease-in-out">
+        <a
+          class="text-neutral-100/65 cursor-default opacity-100 font-medium relative font-inter text-tiny transition ease-in-out flex flex-row items-center justify-center gap-2 p-[12px]"
+          href="/servers"
+          >Servers</a
+        >
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div class="h-6 w-[1px] bg-white opacity-25"></div>
+      <div
+        class="hover:-translate-y-1 focus:translate-y-0 active:translate-y-0 group relative flex justify-center transition ease-in-out"
+      >
+        <button
+          class="text-neutral-200 opacity-50 group-hover:opacity-75 relative font-inter text-tiny transition ease-in-out flex flex-row items-center justify-center gap-2 p-[12px]"
+        >
+          Inbox<svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="inbox"
+            class="svg-inline--fa fa-inbox opacity-75"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="currentColor"
+              d="M121 32C91.6 32 66 52 58.9 80.5L1.9 308.4C.6 313.5 0 318.7 0 323.9V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V323.9c0-5.2-.6-10.4-1.9-15.5l-57-227.9C446 52 420.4 32 391 32H121zm0 64H391l48 192H387.8c-12.1 0-23.2 6.8-28.6 17.7l-14.3 28.6c-5.4 10.8-16.5 17.7-28.6 17.7H195.8c-12.1 0-23.2-6.8-28.6-17.7l-14.3-28.6c-5.4-10.8-16.5-17.7-28.6-17.7H73L121 96z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <a href="/me"
+      ><div
+        class="ml-3 drop-shadow-md transition ease-in-out hover:scale-95 active:scale-90"
+      >
+        <img
+          alt="gugugaga"
+          loading="lazy"
+          width="1024"
+          height="0"
+          decoding="async"
+          data-nimg="1"
+          class="aspect-square w-[37px] rounded-full object-cover"
+          src="<%= user.displayAvatarURL %>"
+          style="color: transparent"
+        /></div
+    ></a>
+  </div>
+</div>

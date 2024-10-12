@@ -19,27 +19,39 @@ async function fetchGuild(guildID, client, guilds){
  * @param {string} query The optional query for guilds
  * @returns {object} The user informations
  */
-async function fetchUser(userData, client, query){
-	if(userData.guilds){
-		userData.guilds.forEach((guild) => {
-			const perms = new Discord.Permissions(BigInt(guild.permissions));
-			if(perms.has("MANAGE_GUILD")){
-				guild.admin = true;
-			}
-			guild.settingsUrl = (client.guilds.cache.get(guild.id) ? `/manage/${guild.id}/` : `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2146958847&guild_id=${guild.id}`);
-			guild.statsUrl = (client.guilds.cache.get(guild.id) ? `/stats/${guild.id}/` : `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2146958847&guild_id=${guild.id}`);
-			guild.iconURL = (guild.icon ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128` : "https://discordemoji.com/assets/emoji/discordcry.png");
-			guild.displayed = (query ? guild.name.toLowerCase().includes(query.toLowerCase()) : true);
-		});
-		userData.displayedGuilds = userData.guilds.filter((g) => g.displayed && g.admin);
-		if(userData.displayedGuilds.length < 1){
-			delete userData.displayedGuilds;
-		}
-	}
-	const user = await client.users.fetch(userData.id);
-	const userDb = await client.findOrCreateUser({ id: user.id }, true);
-	const userInfos = { ...user.toJSON(), ...userDb, ...userData, ...user.presence };
-	return userInfos;
+
+const { PermissionsBitField } = require("discord.js"); // Ensure you import this
+
+async function fetchUser(userData, client, query) {
+    if (userData.guilds) {
+        userData.guilds.forEach((guild) => {
+            const perms = new PermissionsBitField(BigInt(guild.permissions)); // Use the constructor directly
+            if (perms.has(PermissionsBitField.Flags.ManageGuild)) { // Use Flags to check permission
+                guild.admin = true;
+            }
+            guild.settingsUrl = (client.guilds.cache.get(guild.id)
+                ? `/manage/${guild.id}/`
+                : `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2146958847&guild_id=${guild.id}`);
+            guild.statsUrl = (client.guilds.cache.get(guild.id)
+                ? `/stats/${guild.id}/`
+                : `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2146958847&guild_id=${guild.id}`);
+            guild.iconURL = (guild.icon
+                ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128`
+                : "https://discordemoji.com/assets/emoji/discordcry.png");
+            guild.displayed = (query ? guild.name.toLowerCase().includes(query.toLowerCase()) : true);
+        });
+
+        userData.displayedGuilds = userData.guilds.filter((g) => g.displayed && g.admin);
+        if (userData.displayedGuilds.length < 1) {
+            delete userData.displayedGuilds;
+        }
+    }
+
+    const user = await client.users.fetch(userData.id);
+    const userDb = await client.findOrCreateUser({ id: user.id }, true);
+    const userInfos = { ...user.toJSON(), ...userDb, ...userData, ...user.presence };
+    return userInfos;
 }
+
 
 module.exports = { fetchUser, fetchGuild };
